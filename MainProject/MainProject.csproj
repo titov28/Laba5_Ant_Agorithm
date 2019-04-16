@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AntClassLibrary\AntClassLibrary.csproj">
+      <Project>{94b3be06-cc1d-4739-b4d0-2e9e9c51bd69}</Project>
+      <Name>AntClassLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
