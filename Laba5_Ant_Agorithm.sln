@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainProject", "MainProject\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntClassLibrary", "AntClassLibrary\AntClassLibrary.csproj", "{94B3BE06-CC1D-4739-B4D0-2E9E9C51BD69}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFWindow", "WPFWindow\WPFWindow.csproj", "{5502E022-057E-4A3E-8075-A4A93C01CC39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{94B3BE06-CC1D-4739-B4D0-2E9E9C51BD69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94B3BE06-CC1D-4739-B4D0-2E9E9C51BD69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94B3BE06-CC1D-4739-B4D0-2E9E9C51BD69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5502E022-057E-4A3E-8075-A4A93C01CC39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5502E022-057E-4A3E-8075-A4A93C01CC39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5502E022-057E-4A3E-8075-A4A93C01CC39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5502E022-057E-4A3E-8075-A4A93C01CC39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
