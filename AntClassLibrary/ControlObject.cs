@@ -129,7 +129,7 @@ namespace AntClassLibrary
                 {
                     if (distanceMatrix[i, j] != 0)
                     {
-                        pheromoneMatrix[i, j] += (1 - Rho);// *pheromoneMatrix[i, j];
+                        pheromoneMatrix[i, j] *= (1 - Rho);// *pheromoneMatrix[i, j];
                     }
 
 

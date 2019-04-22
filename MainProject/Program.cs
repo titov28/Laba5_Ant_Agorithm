@@ -24,7 +24,7 @@ namespace MainProject
 
             Console.WriteLine("|{0, 10}|{1, 10}|{2, 10}|{3, 10}|{4, 10}|{5, 10}|", "Alpha", "Beta", "Rho", "iterations", "time", "L");
             Console.WriteLine("|{0, 10}|{1, 10}|{2, 10}|{3, 10}|{4, 10}|{5, 10}|", "----------", "----------", "----------", "----------", "----------", "----------");
-            ControlObject trl = new ControlObject(pnt, 0.25, 0.75, 0.5, 100, 150, 8);
+            ControlObject trl = new ControlObject(pnt, 0.25, 0.75, 0.5, 100, 1000, 8);
             trl.RouteSearch();
             trl.Print();
             trl.ShowDistanceMatrix();
@@ -40,7 +40,7 @@ namespace MainProject
             {
                 for(double j = 0; j <= 1; j += 0.25)
                 {
-                    ControlObject tr2 = new ControlObject(pnt, i, 1 - i, j, 100, 150, 8);
+                    ControlObject tr2 = new ControlObject(pnt, i, 1 - i, j, 100, 1000, 8);
                     tr2.RouteSearch();
                     tr2.Print();
                 }
