@@ -36,7 +36,19 @@
             VerticalAlignment="Top"
             Text="TextBox"
             TextWrapping="Wrap" />
+        <Canvas
+            x:Name="Canvas1"
+            Grid.Row="0"
+            Grid.Column="0">
+            <Line
+                x:Name="Line1"
+                Stroke="Black"
+                X1="20"
+                X2="70"
+                Y1="20"
+                Y2="70" />
 
+        </Canvas>
 
     </Grid>
 </Window>

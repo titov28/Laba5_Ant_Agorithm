@@ -68,6 +68,7 @@ namespace AntClassLibrary
                 currentСity = GetNextCity();
                 Cities[currentСity] = 1;
                 pheromoneMatrix[T.Last(), currentСity] += Math.Round(CalculationPheromone(), 2);
+                pheromoneMatrix[currentСity, T.Last()] += Math.Round(CalculationPheromone(), 2);
             }
             else if(CheckNext() == 1)
             {
@@ -79,6 +80,7 @@ namespace AntClassLibrary
                         currentСity = i;
                         Cities[currentСity] = 1;
                         pheromoneMatrix[T.Last(), currentСity] += Math.Round(CalculationPheromone(), 2);
+                        pheromoneMatrix[currentСity, T.Last()] += Math.Round(CalculationPheromone(), 2);
                     }
                 }
             }
@@ -87,6 +89,7 @@ namespace AntClassLibrary
                 T.Add(currentСity);
                 currentСity = T.ElementAt(0);
                 pheromoneMatrix[T.Last(), currentСity] += Math.Round(CalculationPheromone(), 2);
+                pheromoneMatrix[currentСity, T.Last()] += Math.Round(CalculationPheromone(), 2);
 
                 L = RouteLength();
                 //по всем городам прошли

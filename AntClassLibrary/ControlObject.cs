@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace AntClassLibrary
 {
@@ -31,7 +32,9 @@ namespace AntClassLibrary
 
         private int L; //длина кротчайшего маршрута
 
-        private int TimeMax; // количество времени жизни колонии
+        private int iterations; //  жизни колонии
+
+        private double time;
 
         private Ant[] antArray;
 
@@ -57,7 +60,7 @@ namespace AntClassLibrary
             this.Beta = beta;
             this.Rho = rho;
             this.Q = q;
-            this.TimeMax = m;
+            this.iterations = m;
 
 
             antArray = new Ant[antCount];
@@ -80,7 +83,11 @@ namespace AntClassLibrary
 
         public void RouteSearch()
         {
-            for(int i = 0; i < TimeMax; i++)
+            //счетчик тактов
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+
+            for (int i = 0; i < iterations; i++)
             {
                 for(int j = 0; j < antArray.Length; j++)
                 {
@@ -106,6 +113,10 @@ namespace AntClassLibrary
                 CalculationOfPheromoneReduction();
 
             }
+            stopWatch.Stop();
+            time = (double)stopWatch.ElapsedMilliseconds / 1000; // запись времени в секундах
+
+
         }
 
         private void CalculationOfPheromoneReduction()
@@ -181,7 +192,7 @@ namespace AntClassLibrary
         {
 
             Console.Write("\n");
-            Console.Write("DistanceMatrix\n\n");
+            Console.Write("Distance Matrix\n\n");
 
             for (int i = 0; i < distanceMatrix.GetUpperBound(0) + 1; i++)
             {
@@ -198,7 +209,7 @@ namespace AntClassLibrary
         public void ShowPheromoneMatrix()
         {
             Console.Write("\n");
-            Console.Write("PheromoneMatrix\n\n");
+            Console.Write("Pheromone Matrix\n\n");
 
             for (int i = 0; i < pheromoneMatrix.GetUpperBound(0) + 1; i++)
             {
@@ -219,13 +230,21 @@ namespace AntClassLibrary
 
             for(int i = 0; i < T.Count; i++)
             {
-                Console.Write("{0, 5}", T[i]);
+                Console.Write("{0, 5}", T[i] + 1);
             }
+
+            Console.Write("{0, 5}", T[0] + 1);
 
             Console.Write("\n\n");
             Console.Write("Shortest Route Length: {0, 5} \n\n", L);
 
+            Console.Write("\n\n");
+            Console.Write("Route search time: {0, 5:0.0000} \n\n", time);
+        }
 
+        public void Print()
+        {
+            Console.WriteLine("|{0, 10}|{1, 10}|{2, 10}|{3, 10}|{4, 10:0.0000}|{5, 10}|", Alpha, Beta, Rho, iterations, time, L);
         }
     }
 }
